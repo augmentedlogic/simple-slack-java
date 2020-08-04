@@ -12,20 +12,20 @@ import com.augmentedlogic.simpleslack.SlackMessage;
 
 ```java      
 
-    try {
+try {
 
-        SlackMessage slackMessage = new SlackMessage();
-                     slackMessage.setHook("https://hooks.slack.com/services/XXXXXXX/XXXXXXXX/XXXXXXXXXXXXXX");
-                     slackMessage.setUsername("bot");           // optional, default: "bot"
-                     slackMessage.setChannel("general");        // optional, default: "general"
-                     slackMessage.setEmoji(":robot_face:");     // optional, default: ":robot_face:"
-                     slackMessage.send();
+  SlackMessage slackMessage = new SlackMessage();
+               slackMessage.setHook("https://hooks.slack.com/services/XXXXXXX/XXXXXXXX/XXXXXXX");
+               slackMessage.setUsername("bot");           // optional, default: "bot"
+               slackMessage.setChannel("general");        // optional, default: "general"
+               slackMessage.setEmoji(":robot_face:");     // optional, default: ":robot_face:"
+               slackMessage.send();
 
-    } catch(Exception e) {
+} catch(Exception e) {
 
-        // do whatever you like
+  // do whatever you like
 
-    }
+}
 
 ```
 
