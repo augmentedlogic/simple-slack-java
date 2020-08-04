@@ -38,64 +38,64 @@ import com.google.gson.Gson;
 public class SlackMessage {
 
 
-     private String message = null;
-     private String username = "bot";
-     private String channel = "general";
-     private String hook = null;
-     private String icon_emoji = ":robot_face:";
-     private int connect_timeout = 8000;
+    private String message = null;
+    private String username = "bot";
+    private String channel = "general";
+    private String hook = null;
+    private String icon_emoji = ":robot_face:";
+    private int connect_timeout = 8000;
 
 
-     public void setMessage(String message)
-     {
-          this.message = message;
-     }
+    public void setMessage(String message)
+    {
+        this.message = message;
+    }
 
-     public void setUsername(String username)
-     {
-          this.username = username;
-     }
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
 
-     public void setChannel(String channel)
-     {
-          this.channel = channel;
-     }
+    public void setChannel(String channel)
+    {
+        this.channel = channel;
+    }
 
-     public void setEmoji(String emoji)
-     {
-          this.icon_emoji = emoji;
-     }
+    public void setEmoji(String emoji)
+    {
+        this.icon_emoji = emoji;
+    }
 
-     public void setHook(String hook)
-     {
-          this.hook = hook;
-     }
+    public void setHook(String hook)
+    {
+        this.hook = hook;
+    }
 
-     public void setConnectTimeout(int connect_timeout)
-     {
-          this.connect_timeout = connect_timeout;
-     }
+    public void setConnectTimeout(int connect_timeout)
+    {
+        this.connect_timeout = connect_timeout;
+    }
 
-     private String makePayload()
-     {
-         Map<String,String> map = new HashMap<String,String>();
-                            map.put("text", this.message);
-                            map.put("username", this.username);
-                            map.put("channel",this.channel);
-                            map.put("icon_emoji", this.icon_emoji);
+    private String makePayload()
+    {
+        Map<String,String> map = new HashMap<String,String>();
+        map.put("text", this.message);
+        map.put("username", this.username);
+        map.put("channel",this.channel);
+        map.put("icon_emoji", this.icon_emoji);
 
-                                String jsonStr = "";
+        String jsonStr = "";
 
-                                Gson gsonObj = new Gson();
-                                try {
-                                   jsonStr = gsonObj.toJson(map);
-                                } catch(Exception e) {
+        Gson gsonObj = new Gson();
+        try {
+            jsonStr = gsonObj.toJson(map);
+        } catch(Exception e) {
 
-                                }
+        }
         return jsonStr;
-     }
+    }
 
-     public String send() throws Exception {
+    public String send() throws Exception {
 
         URL obj = new URL(this.hook);
 
@@ -112,15 +112,15 @@ public class SlackMessage {
         wr.close();
         int responseCode = con.getResponseCode();
 
-          BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-          String inputLine;
-               StringBuffer response = new StringBuffer();
-                  while ((inputLine = in.readLine()) != null) {
-                          response.append(inputLine);
-                  }
-                  in.close();
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
 
-    return  response.toString();
+        return  response.toString();
     }
 
 }
