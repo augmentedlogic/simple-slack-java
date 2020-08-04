@@ -16,6 +16,7 @@ try {
 
   SlackMessage slackMessage = new SlackMessage();
                slackMessage.setHook("https://hooks.slack.com/services/XXXXXXX/XXXXXXXX/XXXXXXX");
+               slackMessage.setMessage("Hello World");
                slackMessage.setUsername("bot");           // optional, default: "bot"
                slackMessage.setChannel("general");        // optional, default: "general"
                slackMessage.setEmoji(":robot_face:");     // optional, default: ":robot_face:"
