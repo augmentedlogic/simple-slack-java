@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.augmentedlogic.simpleslack</groupId>
   <artifactId>simple-slack</artifactId>
-  <version>0.3</version>
+  <version>0.4</version>
   <properties>
     <java.version>1.8</java.version>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -11,13 +11,23 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub augmentedlogic Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/augmentedlogic/simple-slack-java</url>
-    </repository>
-  </distributionManagement>
+  <licenses>
+    <license>
+      <name>MIT Licence</name>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Wolfgang Hauptfleisch</name>
+      <email>dev@augmentedlogic.com</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/augmentedlogic/simple-slack-java</connection>
+    <developerConnection>scm:git:ssh://github.com/augmentedlogic/simple-slack-java.git</developerConnection>
+    <url>http://github.com/augmentedlogic/simple-slack-java</url>
+  </scm>
   <build>
     <plugins>
       <plugin>

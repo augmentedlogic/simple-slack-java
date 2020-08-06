@@ -45,32 +45,49 @@ public class SlackMessage {
     private String icon_emoji = ":robot_face:";
     private int connect_timeout = 8000;
 
-
+    /*
+     * set the message you want to send
+     */
     public void setMessage(String message)
     {
         this.message = message;
     }
 
+    /*
+     * set the bots username (default is "bot")
+     */
     public void setUsername(String username)
     {
         this.username = username;
     }
 
+    /*
+     * set the channel you want to display the message, without the "#" (default is "general")
+     */
     public void setChannel(String channel)
     {
         this.channel = channel;
     }
 
+    /*
+     * set the emoji/avatar for the bot
+     */
     public void setEmoji(String emoji)
     {
         this.icon_emoji = emoji;
     }
 
+    /*
+     * set your Slack API Hook
+     */
     public void setHook(String hook)
     {
         this.hook = hook;
     }
 
+    /*
+     * set your connection timeout, default is: 8000
+     */
     public void setConnectTimeout(int connect_timeout)
     {
         this.connect_timeout = connect_timeout;
@@ -90,11 +107,14 @@ public class SlackMessage {
         try {
             jsonStr = gsonObj.toJson(map);
         } catch(Exception e) {
-
+            throw e;
         }
         return jsonStr;
     }
 
+    /*
+     * trigger sending your message
+     */
     public String send() throws Exception {
 
         URL obj = new URL(this.hook);
