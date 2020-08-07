@@ -1,5 +1,5 @@
 /**
-  Copyright (c) 2019 Wolfgang Hauptfleisch <wh@augmentedlogic.com>
+  Copyright (c) 2019 Wolfgang Hauptfleisch <dev@augmentedlogic.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
