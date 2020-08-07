@@ -37,13 +37,13 @@ import com.google.gson.Gson;
  **/
 public class SlackMessage {
 
-
     private String message = null;
     private String username = "bot";
     private String channel = "general";
     private String hook = null;
     private String icon_emoji = ":robot_face:";
     private int connect_timeout = 8000;
+    private int status_code = 0;
 
     /*
      * set the message you want to send
@@ -93,6 +93,15 @@ public class SlackMessage {
         this.connect_timeout = connect_timeout;
     }
 
+    /*
+     * returns the http status code of the latest APi request
+     */
+    public int getStatusCode()
+    {
+        return this.status_code;
+    }
+
+
     private String makePayload()
     {
         Map<String,String> map = new HashMap<String,String>();
@@ -116,6 +125,7 @@ public class SlackMessage {
      * trigger sending your message
      */
     public String send() throws Exception {
+        this.status_code = 0;
 
         URL obj = new URL(this.hook);
 
@@ -130,7 +140,7 @@ public class SlackMessage {
         wr.writeBytes(urlParameters);
         wr.flush();
         wr.close();
-        int responseCode = con.getResponseCode();
+        this.status_code = con.getResponseCode();
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
