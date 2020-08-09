@@ -30,12 +30,12 @@ try {
 
 ```
 
-# maven
+## via maven
 
 ```
 <dependency>
  <groupId>com.augmentedlogic.simpleslack</groupId>
  <artifactId>simple-slack</artifactId>
- <version>0.4</version>
+ <version>0.5</version>
 </dependency>
 ```
