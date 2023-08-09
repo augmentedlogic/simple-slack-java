@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.augmentedlogic.simpleslack</groupId>
   <artifactId>simple-slack</artifactId>
-  <version>0.5</version>
+  <version>0.6</version>
   <name>Simple Slack Client</name>
   <description>Simple client to send messages to slack</description>
   <url>https://developer.augmentedlogic.com</url>
