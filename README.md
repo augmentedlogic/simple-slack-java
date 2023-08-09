@@ -36,6 +36,6 @@ try {
 <dependency>
  <groupId>com.augmentedlogic.simpleslack</groupId>
  <artifactId>simple-slack</artifactId>
- <version>0.5</version>
+ <version>0.6</version>
 </dependency>
 ```
